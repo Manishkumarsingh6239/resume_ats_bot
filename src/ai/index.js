@@ -1,5 +1,5 @@
-import gemini from './gemini';
-import openai from './openai';
+import * as gemini from './gemini.js';
+import * as openai from './openai.js';
 
 async function score(resumeText, jdText) {
   try {

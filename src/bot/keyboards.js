@@ -8,4 +8,4 @@ const actionKeyboard = {
   },
 };
 
-module.exports = { actionKeyboard };
+export { actionKeyboard };

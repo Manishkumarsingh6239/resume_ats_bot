@@ -17,4 +17,4 @@ function resetSession(chatId) {
   sessions.delete(chatId);
 }
 
-module.exports = { getSession, resetSession };
+export { getSession, resetSession };

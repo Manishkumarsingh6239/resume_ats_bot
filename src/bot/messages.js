@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   WELCOME: `👋 Welcome to Resume ATS Bot!\n\nSend me your *resume as a PDF* to get started.`,
   ASK_JD: `Got your resume! Now send me the *job description* — paste as text or upload a PDF.`,
   SCANNING: `Scanning your resume against the JD...`,

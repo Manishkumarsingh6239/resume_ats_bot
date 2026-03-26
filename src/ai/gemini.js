@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_API_KEY } from '../config';
-import { scorePrompt, editPrompt } from './prompts';
+import { GEMINI_API_KEY } from '../config/index.js';
+import { scorePrompt, editPrompt } from './prompts.js';
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });

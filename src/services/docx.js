@@ -1,4 +1,4 @@
-const { Document, Packer, Paragraph } = require('docx');
+import { Document, Packer, Paragraph } from 'docx';
 
 async function generateDOCX(text) {
   const doc = new Document({
@@ -9,4 +9,4 @@ async function generateDOCX(text) {
   return await Packer.toBuffer(doc);
 }
 
-module.exports = { generateDOCX };
+export { generateDOCX };

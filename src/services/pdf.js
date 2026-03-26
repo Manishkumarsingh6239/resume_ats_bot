@@ -1,5 +1,5 @@
-const pdfParse = require('pdf-parse');
-const { PDFDocument, StandardFonts } = require('pdf-lib');
+import pdfParse from 'pdf-parse';
+import { PDFDocument, StandardFonts } from 'pdf-lib';
 
 async function parsePDF(buffer) {
   const data = await pdfParse(buffer);
@@ -21,4 +21,4 @@ async function generatePDF(text) {
   return Buffer.from(await pdfDoc.save());
 }
 
-module.exports = { parsePDF, generatePDF };
+export { parsePDF, generatePDF };

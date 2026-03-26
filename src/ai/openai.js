@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
-import { OPENAI_API_KEY } from '../config';
-import { scorePrompt, editPrompt } from './prompts';
+import { OPENAI_API_KEY } from '../config/index.js';
+import { scorePrompt, editPrompt } from './prompts.js';
 
 const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 

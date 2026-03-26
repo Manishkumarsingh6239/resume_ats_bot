@@ -1,9 +1,9 @@
-const ai = require('../ai');
-const { parsePDF, generatePDF } = require('../services/pdf');
-const { generateDOCX } = require('../services/docx');
-const { getSession, resetSession } = require('../services/session');
-const { actionKeyboard } = require('./keyboards');
-const MSG = require('./messages');
+import * as ai from '../ai/index.js';
+import { parsePDF, generatePDF } from '../services/pdf.js';
+import { generateDOCX } from '../services/docx.js';
+import { getSession, resetSession } from '../services/session.js';
+import { actionKeyboard } from './keyboards.js';
+import MSG from './messages.js';
 
 function formatScore(result) {
   const k = result.keywords.map(i => `  • ${i}`).join('\n') || '  None';
@@ -103,4 +103,4 @@ async function runScan(bot, chatId, session) {
   bot.sendMessage(chatId, formatScore(result), { parse_mode: 'Markdown', ...actionKeyboard });
 }
 
-module.exports = { register };
+export { register };
