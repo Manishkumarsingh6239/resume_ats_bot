@@ -1,9 +1,14 @@
-import pdfParse from 'pdf-parse';
+import { PDFParse } from 'pdf-parse';
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 
 async function parsePDF(buffer) {
-  const data = await pdfParse(buffer);
-  return data.text;
+  const parser = new PDFParse({ data: buffer });
+  try {
+    const result = await parser.getText();
+    return result.text;
+  } finally {
+    await parser.destroy();
+  }
 }
 
 async function generatePDF(text) {

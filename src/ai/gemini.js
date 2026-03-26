@@ -1,9 +1,12 @@
+// src/ai/gemini.js
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_API_KEY } from '../config/index.js';
 import { scorePrompt, editPrompt } from './prompts.js';
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
+// ✅ Updated from gemini-1.5-flash (removed) to gemini-2.5-flash (free & current)
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 async function score(resumeText, jdText) {
   const result = await model.generateContent(scorePrompt(resumeText, jdText));
